@@ -19,6 +19,10 @@ type Algorithm struct {
 	hash func() hash.Hash
 }
 
+func (a *Algorithm) String() string {
+	return a.name
+}
+
 func algorithmFromString(name string) (*Algorithm, error) {
 	switch name {
 	case AlgorithmHmacSha1.name:
